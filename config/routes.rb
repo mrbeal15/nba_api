@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
+
+  FORMAT_JSON = ->(r){ r.format == 'json' }
+
+  namespace :v1, defaults: { format: :json } do
+    resources :players, :teams, only: [:index, :show]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  # get '/players' => 'players#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+
+      # resources :microposts, only: [:index, :create, :show, :update, :destroy]
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
