@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   FORMAT_JSON = ->(r){ r.format == 'json' }
 
-  namespace :v1, constraints: FORMAT_JSON do
-    resources :players, :teams
+  namespace :v1, defaults: { format: :json } do
+    resources :players, :teams, only: [:index, :show]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

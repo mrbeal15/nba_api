@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817020817) do
+ActiveRecord::Schema.define(version: 20160824005429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20160817020817) do
   create_table "contracts", force: :cascade do |t|
     t.string   "name"
     t.string   "team"
-    t.float    "season_2016_17"
-    t.float    "season_2017_18"
-    t.float    "season_2018_19"
+    t.string   "season_2016_17"
+    t.string   "season_2017_18"
+    t.string   "season_2018_19"
     t.string   "signed_using"
     t.string   "guaranteed"
     t.datetime "created_at",     null: false
