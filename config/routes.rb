@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   namespace :v1, defaults: { format: :json } do
     match '*all', to: 'application#preflight', via: [:options]
-    resources :players, :teams, :contracts, only: [:index, :show]
+    resources :players, :teams, :contracts, :data, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
