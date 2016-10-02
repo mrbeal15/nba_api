@@ -6,17 +6,17 @@ module.exports = React.createClass({
     return {data: []};
   },
   componentDidMount: function() {
-    this.readPlayersFromAPI();
+    this.readTeamsFromAPI();
   },
-  readPlayersFromAPI: function() {
-    this.props.readFromAPI(this.props.origin + '/v1/players', function(players){
-      this.setState({data: players});
+  readTeamsFromAPI: function() {
+    this.props.readFromAPI(this.props.origin + '/v1/teams', function(teams) {
+      this.setState({data: teams})
     }.bind(this));
   },
   render: function() {
     return (
-      <div className="players-list">
-        <PlayersList data={this.state.data} />
+      <div className="teams-list">
+        <TeamsList data={this.state.data} />
       </div>
     );
   }

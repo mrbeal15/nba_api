@@ -5,7 +5,7 @@ module.exports = React.createClass({
     return (
       <li className="team">
         <div>
-          <span className="team-text"><b>{this.props.content.team}</b></span>
+          <span className="team-text"><b>{this.props.content}</b></span>
         </div>
       </li>
     );
