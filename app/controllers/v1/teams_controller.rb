@@ -5,6 +5,14 @@ class V1::TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
-    render json: @team
+    @players = @team.players
+    @contracts = @team.contracts
+    @response = {
+      team: @team,
+      players: @players,
+      contracts: @contracts
+    }
+
+    render json: @response
   end
 end
