@@ -4,12 +4,13 @@ class V1::PlayersController < ApplicationController
   end
 
   def show
-    @player = Player.find(params[:id])
-    @contract = Contract.find_by(name: @player.name)
-    player_object = {
-      "player" => @player,
-      "contract" => @contract
+    player = Player.find(params[:id])
+    contract = player.contract
+    @player = {
+      "player" => player,
+      "contract" => contract
     }
-    render json: player_object
+
+    render json: @player
   end
 end
