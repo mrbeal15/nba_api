@@ -6,11 +6,11 @@ class V1::PlayersController < ApplicationController
   def show
     player = Player.find(params[:id])
     contract = player.contract
-    @player = {
-      "player" => player,
-      "contract" => contract
+    @response = {
+      player: player,
+      contract: contract
     }
 
-    render json: @player
+    render json: @response
   end
 end
